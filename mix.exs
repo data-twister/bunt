@@ -6,15 +6,15 @@ defmodule Bunt.Mixfile do
       app: :bunt,
       version: "0.2.0",
       elixir: "~> 1.1",
-      build_embedded: Mix.env() == :prod,
-      start_permanent: Mix.env() == :prod,
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
       deps: deps(),
       name: "Bunt",
       description: "256 color ANSI coloring in the terminal",
       package: [
         maintainers: ["René Föhring"],
         licenses: ["MIT"],
-        links: %{"GitHub" => "https://github.com/rrrene/bunt"}
+        links: %{"GitHub" => "https://github.com/rrrene/bunt"},
       ]
     ]
   end
@@ -23,7 +23,7 @@ defmodule Bunt.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [mod: {Bunt, []}, applications: [:logger]]
+    [applications: [:logger]]
   end
 
   # Dependencies can be Hex packages:
